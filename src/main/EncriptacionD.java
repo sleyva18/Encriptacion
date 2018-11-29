@@ -46,15 +46,14 @@ public class EncriptacionD {
 
             BigInteger resumenNumero = new BigInteger(1, bytesDelResumen);
             String resumen = resumenNumero.toString(16);
-
-            System.out.println("Mensaje '" + respues + "' -> Hash MD5: " + resumen);
+            System.out.println("Hash MD5 ->  " + resumen);
         } catch (NoSuchAlgorithmException e) {
         }
     }
 
     public static void main(String[] args) {
 
-        cifrar("hola");
+        cifrar("sysvallegrande");
 
     }
 
