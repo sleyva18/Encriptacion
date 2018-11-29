@@ -7,7 +7,7 @@ import model.model;
 
 public class EncriptacionD {
 
-    public static void cifrar(String texto) {
+    public static String cifrar(String texto) {
         model dl = new model();
         String text = texto;
         int numero = 25;
@@ -34,27 +34,31 @@ public class EncriptacionD {
             System.out.println("Conversion ascii => " + dl.getCodigoAscii() + " Conversion binaria => " + dl.getBinario());
             respues = respues + dl.getBinario();
         }
-
-        System.out.println("Conversion a Binario concatenada => "+respues);
-        
-        byte[] bytesDelMensaje = respues.getBytes();
-
-        MessageDigest resumenDelMensaje = null;
-        try {
-            resumenDelMensaje = MessageDigest.getInstance("MD5");
-            byte[] bytesDelResumen = resumenDelMensaje.digest(bytesDelMensaje);
-
-            BigInteger resumenNumero = new BigInteger(1, bytesDelResumen);
-            String resumen = resumenNumero.toString(16);
-            System.out.println("Hash MD5 ->  " + resumen);
-        } catch (NoSuchAlgorithmException e) {
-        }
+        return respues;
     }
 
     public static void main(String[] args) {
 
-        cifrar("sysvallegrande");
+        System.out.println("Conversion binaria => " + cifrar("hola"));
+//        String textoCifrado = cifrar("sysvallegrande");
+//        
+//        byte[] bytesDelMensaje = textoCifrado.getBytes();
+//
+//        MessageDigest resumenDelMensaje = null;
+//        try {
+//            resumenDelMensaje = MessageDigest.getInstance("MD5");
+//            byte[] bytesDelResumen = resumenDelMensaje.digest(bytesDelMensaje);
+//
+//            BigInteger resumenNumero = new BigInteger(1, bytesDelResumen);
+//            String resumen = resumenNumero.toString(16);
+//
+//            System.out.println("Mensaje '" + textoCifrado + "' -> Hash MD5: " + resumen);
+//        } catch (NoSuchAlgorithmException e) {
+//        }
 
+//        // de binario a decimal
+//        int decimalConvertido = Integer.parseInt(binario, 2);
+//        System.out.println(decimalConvertido); // 8
     }
 
 }
