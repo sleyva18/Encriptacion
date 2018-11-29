@@ -13,7 +13,7 @@ public class EncriptacionD {
         int numero = 25;
 
         final String alfabeto = "abcdefghijklmnñopqrstuvwxyz";
-
+//        final String alfabeto = "AbCdEfGhIjKlmNñOpQrStUvWxYz";
         String cifrado = "";
         for (int i = 0; i < text.length(); i++) {
             int posicion = alfabeto.indexOf(text.charAt(i));
